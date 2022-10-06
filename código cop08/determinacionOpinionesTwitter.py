@@ -85,8 +85,8 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
 
 etapas_aprendizaje = Pipeline([('frequencia', CountVectorizer()),
-                                  ('tfidf', TfidfTransformer()),
-                                  ('algoritmo', MultinomialNB())])
+                                ('tfidf', TfidfTransformer()),
+                                ('algoritmo', MultinomialNB())])
 
 
 #Aprendizaje
@@ -129,8 +129,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn import svm
 etapas_aprendizaje = Pipeline([('frequencia', CountVectorizer()),
-                                  ('tfidf', TfidfTransformer()),
-                                  ('algoritmo', svm.SVC(kernel='linear', C=2))])
+                                ('tfidf', TfidfTransformer()),
+                                ('algoritmo', svm.SVC(kernel='linear', C=2))])
 
 
 #Aprendizaje
@@ -149,8 +149,8 @@ print(busquedaCOptimo.best_params_)
 
 #Parámetro nuevo C=1
 etapas_aprendizaje = Pipeline([('frequencia', CountVectorizer()),
-                                  ('tfidf', TfidfTransformer()),
-                                  ('algoritmo', svm.SVC(kernel='linear', C=1))])
+                                ('tfidf', TfidfTransformer()),
+                                ('algoritmo', svm.SVC(kernel='linear', C=1))])
 
 modelo = etapas_aprendizaje.fit(X_train,y_train)
 from sklearn.metrics import classification_report
